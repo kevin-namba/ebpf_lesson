@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "parsing_helpers.h": "c",
+        "if_ether.h": "c",
+        "in.h": "c"
+    }
+}
