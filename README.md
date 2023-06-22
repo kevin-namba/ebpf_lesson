@@ -1,5 +1,12 @@
-# astraea
-ASyncronize TRAnsparent Edge Alocator
+# ebpf_lesson
+## prepare
+install bcc
+https://github.com/iovisor/bcc/blob/master/INSTALL.md
+
+add submodule
+```
+git submodule update --init  
+```
 
 ## set IP address
 ```
@@ -24,7 +31,7 @@ sudo ln -s /proc/${pid}/ns/net /var/run/netns/<ns>
 
 ```
 
-## atach dammy program
+## atatch dammy program
 ```
 sudo ip netns exec <ns> ip link set dev <dev_name> xdp obj xdp_pass_kern.o sec xdp
 ```
