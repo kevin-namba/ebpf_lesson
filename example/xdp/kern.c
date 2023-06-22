@@ -3,8 +3,8 @@
 #include <linux/ip.h>
 #include <linux/tcp.h>
 #include <linux/udp.h>
-#include "../common/bpf_helpers.h"
-#include "../common/bpf_endian.h"
+#include "../../common/bpf_helpers.h"
+#include "../../common/bpf_endian.h"
 
 // The parsing helper functions from the packet01 lesson have moved here
 #include "../common/parsing_helpers.h"
