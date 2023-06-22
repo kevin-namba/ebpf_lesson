@@ -14,6 +14,26 @@
 // #include "../common/xdp_stats_kern_user.h"
 // #include "../common/xdp_stats_kern.h"
 
+static inline unsigned short checksum(unsigned short *buf, int bufsz) {
+    unsigned long sum = 0;
+
+    while (bufsz > 1) {
+        sum += *buf;
+        buf++;
+        bufsz -= 2;
+    }
+
+    if (bufsz == 1) {
+        sum += *(unsigned char *)buf;
+    }
+
+    sum = (sum & 0xffff) + (sum >> 16);
+    sum = (sum & 0xffff) + (sum >> 16);
+
+    return ~sum;
+}
+
+
 int xdp_pass(struct xdp_md *ctx)
 {
 	void *data_end = (void *)(long)ctx->data_end;
