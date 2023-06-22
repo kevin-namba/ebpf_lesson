@@ -1,6 +1,6 @@
 [submodule "xdp-tools"]
 	path = xdp-tools
-	url = https://github.com/xdp-project/xdp-tools/
+	url = git@github.com:xdp-project/xdp-tools.git
 [submodule "libbpf"]
 	path = libbpf
-	url = https://github.com/libbpf/libbpf/
+	url = git@github.com:libbpf/libbpf.git
